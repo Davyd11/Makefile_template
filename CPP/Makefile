@@ -6,7 +6,7 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 17:30:37 by dpuente-          #+#    #+#              #
-#    Updated: 2021/11/29 15:43:00 by dpuente-         ###   ########.fr        #
+#    Updated: 2021/12/09 17:56:46 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ CXX						=	clang++
 OPT						=	-o
 RM						=	rm -f
 CXXFLAGS				=	-Wall -Wextra -Werror -g3 -fsanitize=address
-NAME					=	KarenFilter
+NAME					=	a.out
 
 all:
 	@echo ""
@@ -37,6 +37,7 @@ all:
 	@echo " -- [clean] deletes all files generated during compilation"
 	@echo " -- [fclean] deletes all files generated during compilation, including nokia exec"
 	@echo " -- [re] Runs both <fclean> and <e> instructions"
+	@echo " -- [progress] Aoutomates a commit for little changes"
 	@echo ""
 
 
@@ -59,18 +60,6 @@ clean_art:
 	@echo "█    █▄▄█       █   █▄▄▄█  ▄   █ █ █   █   █ █ █   █  █▄▄█ █"
 	@echo "█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄█ █▄▄█▄█  █▄▄█▄▄▄█▄█  █▄▄█▄▄▄▄▄▄▄█$(RESET)"
 
-
-re_build_art:
-	@echo "$(RED) ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ $(GRN)▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄ ▄▄▄     ▄▄▄▄▄▄  ▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄▄"
-	@echo "$(RED)█   ▄  █ █       $(GRN)█  ▄    █  █ █  █   █   █   █      ██   █  █  █ █       █"
-	@echo "$(RED)█  █ █ █ █    ▄▄▄$(GRN)█ █▄█   █  █ █  █   █   █   █  ▄    █   █   █▄█ █   ▄▄▄▄█"
-	@echo "$(RED)█   █▄▄█▄█   █▄▄▄$(GRN)█       █  █▄█  █   █   █   █ █ █   █   █       █  █  ▄▄ "
-	@echo "$(RED)█    ▄▄  █    ▄▄▄$(GRN)█  ▄   ██       █   █   █▄▄▄█ █▄█   █   █  ▄    █  █ █  █"
-	@echo "$(RED)█   █  █ █   █▄▄▄$(GRN)█ █▄█   █       █   █       █       █   █ █ █   █  █▄▄█ █"
-	@echo "$(RED)█▄▄▄█  █▄█▄▄▄▄▄▄▄$(GRN)█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄██▄▄▄█▄█  █▄▄█▄▄▄▄▄▄▄█$(RESET)"
-
-
-
 e:						build_art $(NAME)
 
 $(NAME):				$(OBJS_S)
@@ -81,5 +70,10 @@ clean:					clean_art
 
 fclean:					clean
 						$(RM) $(NAME)
+
+progress:
+						git add . &>/dev/null
+						git commit -m "Progress" &>/dev/null
+						git push &>/dev/null
 
 re:						fclean e
