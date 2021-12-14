@@ -6,9 +6,13 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 17:30:37 by dpuente-          #+#    #+#              #
-#    Updated: 2021/12/14 12:18:23 by dpuente-         ###   ########.fr        #
+#    Updated: 2021/12/14 18:26:29 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#--------------------------------
+NAME = a.out
+#--------------------------------
 
 #silence bash output &>/dev/null
 
@@ -29,7 +33,6 @@ CXX						=	c++ --std=c++98
 OPT						=	-o
 RM						=	rm -f
 CXXFLAGS				=	-Wall -Wextra -Werror -g3 -fsanitize=address
-NAME					=	a.out
 
 all:
 	@echo ""
