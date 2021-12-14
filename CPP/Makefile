@@ -25,7 +25,7 @@ SRCS					=	main.cpp Fixed.cpp\
 
 
 OBJS_S					=	$(SRCS:.cpp=.o)
-CXX						=	clang++
+CXX						=	clang++ --std=c++98
 OPT						=	-o
 RM						=	rm -f
 CXXFLAGS				=	-Wall -Wextra -Werror -g3 -fsanitize=address
