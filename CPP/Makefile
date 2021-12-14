@@ -21,7 +21,7 @@ WHT = \033[0;37m
 ORG = \033[38;5;202m
 RESET = \033[0m
 
-SRCS					=	main.cpp Fixed.cpp\
+SRCS					=	main.cpp \
 
 
 OBJS_S					=	$(SRCS:.cpp=.o)
