@@ -6,7 +6,7 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 17:30:37 by dpuente-          #+#    #+#              #
-#    Updated: 2021/12/09 17:56:46 by dpuente-         ###   ########.fr        #
+#    Updated: 2021/12/14 12:18:23 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS					=	main.cpp \
 
 
 OBJS_S					=	$(SRCS:.cpp=.o)
-CXX						=	clang++ --std=c++98
+CXX						=	c++ --std=c++98
 OPT						=	-o
 RM						=	rm -f
 CXXFLAGS				=	-Wall -Wextra -Werror -g3 -fsanitize=address
