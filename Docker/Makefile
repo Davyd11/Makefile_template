@@ -1,5 +1,12 @@
 #silence bash output &>/dev/null
 
+
+# ════════════════════════════════════
+CONTAINER_NAME = Example_name
+# ════════════════════════════════════
+IMAGE_NAME = Example2_name
+# ════════════════════════════════════
+
 # Art colors
 BLU = \033[0;34m
 GRN = \033[0;32m
@@ -23,7 +30,7 @@ all:
 	@echo " -- [prune] to delete all containers, images created and volumes"
 #	@echo " -- [prune_data] delet all already saved data from volumes"
 	@echo " -- [re] execute prune and fast"
-	@echo " -- [server] access server container"
+	@echo " -- [container] access server container"
 	@echo ""
 
 startdocker:
@@ -31,20 +38,26 @@ startdocker:
 	@echo "$(GRN) Docker is starting... $(RESET)"
 
 info:
-	@echo "--------------------------------------------------------------------------"
-	docker images
-	@echo "--------------------------------------------------------------------------"
-	docker ps -a
-	@echo "--------------------------------------------------------------------------"
-	docker volume ls
-	@echo "--------------------------------------------------------------------------"
+	@echo "╔════════════════════════════════════════════════════════════════════════╗"
+	@echo "║ IMAGES                                                                 ║"
+	@echo "╚════════════════════════════════════════════════════════════════════════╝"
+	@docker images
+	@echo "╔════════════════════════════════════════════════════════════════════════╗"
+	@echo "║ CONTAINERS                                                             ║"
+	@echo "╚════════════════════════════════════════════════════════════════════════╝"
+	@docker ps -a
+	@echo "╔════════════════════════════════════════════════════════════════════════╗"
+	@echo "║ VOLUMES                                                                ║"
+	@echo "╚════════════════════════════════════════════════════════════════════════╝"
+	@docker volume ls
+#	@echo "══════════════════════════════════════════════════════════════════════════"
 
 
 build:
-	docker build -t "server" .
+	docker build -t $(IMAGE_NAME) .
 
 run:
-	docker run -p 80:80 --name nginx_server -d server
+	docker run -p 80:80 --name $(CONTAINER_NAME) -d $(IMAGE_NAME)
 	@echo "$(GRN) ▄▄   ▄▄ ▄▄▄▄▄▄▄ "
 	@echo "$(GRN)█  █ █  █       █"
 	@echo "$(GRN)█  █ █  █    ▄  █"
@@ -75,7 +88,7 @@ del:
 prune:
 	docker system prune -a -f
 
-server:
-	docker exec -it nginx_server bash
+container:
+	docker exec -it $(CONTAINER_NAME) bash
 
 re:	stop prune fast
