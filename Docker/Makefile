@@ -124,6 +124,7 @@ del:
 
 prune:
 	docker system prune -a -f
+#	docker volume prune -f
 
 container1:
 	docker exec -it $(CONTAINER_NAME1) $(SHELL_TO_OPEN)
