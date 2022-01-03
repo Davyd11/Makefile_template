@@ -75,8 +75,8 @@ fclean:					clean
 						$(RM) $(NAME)
 
 progress:
-						git add . &>/dev/null
-						git commit -m "Progress" &>/dev/null
-						git push &>/dev/null
+	@git add . &>/dev/null
+	@git commit -m "Progress" &>/dev/null
+	@git push &>/dev/null
 
 re:						fclean e
