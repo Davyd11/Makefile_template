@@ -6,7 +6,7 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 17:30:37 by dpuente-          #+#    #+#              #
-#    Updated: 2021/12/14 18:26:29 by dpuente-         ###   ########.fr        #
+#    Updated: 2022/01/12 16:20:18 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,7 @@ fclean:					clean
 
 progress:
 	@git add . &>/dev/null
-	@git commit -m "Progress" &>/dev/null
+	@git commit -m "Progress from $(date +"%d-%m-%Y --> %T")"
 	@git push &>/dev/null
 
 re:						fclean e
