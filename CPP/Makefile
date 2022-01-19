@@ -6,7 +6,7 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 17:30:37 by dpuente-          #+#    #+#              #
-#    Updated: 2022/01/18 15:42:24 by dpuente-         ###   ########.fr        #
+#    Updated: 2022/01/19 09:59:23 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ CXXFLAGS				=	-Wall -Wextra -Werror -g3 -fsanitize=address
 
 all:
 	@echo ""
-	@echo " -- [e] compile all files and generates nokia exec"
+	@echo " -- [do] compile all files and generates nokia exec"
 	@echo " -- [clean] deletes all files generated during compilation"
 	@echo " -- [fclean] deletes all files generated during compilation, including nokia exec"
 	@echo " -- [re] Runs both <fclean> and <e> instructions"
@@ -64,7 +64,7 @@ clean_art:
 	@echo "█    █▄▄█       █   █▄▄▄█  ▄   █ █ █   █   █ █ █   █  █▄▄█ █"
 	@echo "█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄█ █▄▄█▄█  █▄▄█▄▄▄█▄█  █▄▄█▄▄▄▄▄▄▄█$(RESET)"
 
-e:						build_art $(NAME)
+do:						build_art $(NAME)
 
 $(NAME):				$(OBJS_S)
 						$(CXX) $(CXXFLAGS) $(OPT) $(NAME) $(OBJS_S) 
