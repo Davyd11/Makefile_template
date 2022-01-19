@@ -26,6 +26,14 @@ IMAGE_NAME1_DIR = .
 # ════════════════════════════════════
 # ════════════════════════════════════
 # ════════════════════════════════════
+#VOLUME_NAME1 = Volume_name1
+# ════════════════════════════════════
+#VOLUME_NAME2 = Volume_name2
+# ════════════════════════════════════
+#VOLUME_NAME3 = Volume_name3
+# ════════════════════════════════════
+# ════════════════════════════════════
+# ════════════════════════════════════
 SHELL_TO_OPEN = bash
 
 
@@ -125,6 +133,10 @@ del:
 prune:
 	docker system prune -a -f
 #	docker volume prune -f
+#	#volumes-->
+#	@docker volume rm $(VOLUME_NAME1) &>/dev/null
+#	@docker volume rm $(VOLUME_NAME2) &>/dev/null
+#	@docker volume rm $(VOLUME_NAME3) &>/dev/null 
 
 container1:
 	docker exec -it $(CONTAINER_NAME1) $(SHELL_TO_OPEN)
