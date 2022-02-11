@@ -6,7 +6,7 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 17:30:37 by dpuente-          #+#    #+#              #
-#    Updated: 2022/01/19 09:59:23 by dpuente-         ###   ########.fr        #
+#    Updated: 2022/02/11 11:33:04 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,11 +37,20 @@ CXXFLAGS				=	-Wall -Wextra -Werror -g3 -fsanitize=address
 
 all:
 	@echo ""
-	@echo " -- [do] compile all files and generates nokia exec"
+	@echo "╔═════════════════════════════════════════════════════════════════════════════╗"
+	@echo "║ Use the following parameters after the <make> rule for a personalized build ║"
+	@echo "╚═════════════════════════════════════════════════════════════════════════════╝"
+	@echo ""
+	@echo "[ UTILITIES ]"
+	@echo " -- [progress] Aoutomates a commit for little changes"
+	@echo "[ BUILD ]"
+	@echo " -- [do] compile all files and generates $(NAME) exec"
+	@echo " -- [re] Runs both <fclean> and <e> instructions"
+	@echo "[ CLEAN ]"
 	@echo " -- [clean] deletes all files generated during compilation"
 	@echo " -- [fclean] deletes all files generated during compilation, including nokia exec"
-	@echo " -- [re] Runs both <fclean> and <e> instructions"
-	@echo " -- [progress] Aoutomates a commit for little changes"
+#	@echo "[ EXEC ]"
+#	@echo " -- [exec] access $(CONTAINER_NAME1) container"
 	@echo ""
 
 
