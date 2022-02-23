@@ -6,7 +6,7 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 17:30:37 by dpuente-          #+#    #+#              #
-#    Updated: 2022/02/23 18:01:43 by dpuente-         ###   ########.fr        #
+#    Updated: 2022/02/23 18:02:26 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,7 +108,7 @@ fast: re exec
 #########
 progress:
 	@git add . &>/dev/null
-	@git commit -m "Progress"
+	@git commit -m "Progress" &>/dev/null
 	@git push &>/dev/null
 
 
